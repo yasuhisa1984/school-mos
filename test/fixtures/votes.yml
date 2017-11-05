@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: one
+  cookie: MyString
+  plus_or_minus: 1
+
+two:
+  comment: two
+  cookie: MyString
+  plus_or_minus: 1
