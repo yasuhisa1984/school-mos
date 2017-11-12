@@ -28,7 +28,7 @@ gem "mini_magick"
 gem 'slim-rails'
 gem 'pry-rails'
 gem 'better_errors'
-
+gem 'ui_faces'
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
