@@ -1,2 +1,213 @@
-h1 Schools#index
-p Find me in app/views/schools/index.html.slim
+header
+  h1
+    | スクールモス
+nav.navbar.navbar-default[role="navigation"]
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      span.navbar-brand.visible-xs
+        | メニュー
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li
+          a[href="index.html" title="ホーム"]
+            | ホーム
+            br
+            span
+              | HOME
+        li
+          a[href="index.html" title="会社概要"]
+            | 会社概要
+            br
+            span
+              | COMPANY
+        li
+          a[href="index.html" title="サービス"]
+            | サービス
+            br
+            span
+              | SERVICE
+        li
+          a[href="index.html" title="採用情報"]
+            | 採用情報
+            br
+            span
+              | RECRIT
+        li
+          a[href="index.html" title="お問い合わせ"]
+            | お問い合わせ
+            br
+            span
+              | CONTACT
+aside#my-carousel.carousel.slide[data-ride="carousel" data-interval="8000"]
+  ol.carousel-indicators
+    li.active[data-target="#my-carousel" data-slide-to="0"]
+    li[data-target="#my-carousel" data-slide-to="1"]
+    li[data-target="#my-carousel" data-slide-to="2"]
+  .carousel-inner
+    .item.active
+      img[alt="First slide" src="http://t-walker.jp/eb/gate/d_march/title.gif"]
+    .item
+      img[alt="Second slide" src="http://t-walker.jp/eb/gate/d_march/title.gif"]
+    .item
+      img[alt="Third slide" src="http://t-walker.jp/eb/gate/d_march/title.gif"]
+  a.left.carousel-control[href="#my-carousel" data-slide="prev"]
+    span.glyphicon.glyphicon-chevron-left
+  a.right.carousel-control[href="#my-carousel" data-slide="next"]
+    span.glyphicon.glyphicon-chevron-right
+.container-fluid
+  .row
+    .col-sm-9.col-md-9
+      section
+        h2
+          | スクール最新情報　今ここが熱いかも！！
+        .form-inline
+          img[src="https://diveintocode.jp/assets/way_01-7a6dbde633f5fc8874203d7929bb892df2579fb2476a34211c406bb58f45e3c0.jpg"]
+          p
+            | 当テンプレートは
+            a[href="http://www.saka-en.com/" title="ホームページ制作のサカエン"]
+              | ホームページ制作のサカエン
+            |  が
+            a[hr="http://getbootstrap.com/" title="Bootstrap · The world's most popular mobile-first and responsive front-end framework." rel="nofollow"]
+              | Bootstrap
+            |  3.3.4 で作った「コーポレートサイト向けホームページテンプレート」です。情報の掲載には細心の注意を払っておりますが、完全性等について保証を行うものではありませんので予めご了承ください。
+      section
+        h2
+          | レスポンシブWEBデザイン
+        p
+          | 当テンプレートは レスポンシブWEBデザイン(html5+CSS3) です。パソコン、タブレット、スマートフォンに対応しています。尚、新しいブラウザ(IEならIE8以降)でないと全ての効果を確認する事はできません。詳しくは
+          a[hr="http://getbootstrap.com/" title="Bootstrap · The world's most popular mobile-first and responsive front-end framework." rel="nofollow"]
+            | Bootstrap
+          |  公式サイトにて確認ください。
+      section
+        h2
+          | ご利用になりたい方へ
+        p
+          a[hr="http://www.saka-en.com/contact/" title="ホームページ制作のサカエンへのお問い合わせ" target="_blank"]
+            | 当テンプレートをご利用になりたい方はこちらよりお問い合わせください。
+      section.news
+        h2
+          | 更新情報・お知らせ
+        dl
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | htmlににtimeタグを使っています。必要に応じて設定できますし、不要なら削除することもできます。
+            img[src="images/new.gif" alt="New" width="34" height="11"]
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+          dt
+            time[datetime="2999-12-31"]
+              | 2999/12/31
+          dd
+            | ホームページリニューアル
+    .col-sm-3.col-md-3
+      nav.sidebar
+        h3
+          | サブメニュー
+        ul.submenu
+          li
+            a[hr="#"]
+              | カテゴリリンク１
+          li
+            a[hr="#"]
+              | カテゴリリンク２
+          li
+            a[hr="#"]
+              | カテゴリリンク３
+          li
+            a[hr="#"]
+              | カテゴリリンク４
+          li
+            a[hr="#"]
+              | カテゴリリンク５
+      nav.sidebar
+        h3
+          | 関連情報
+        ul.submenu
+          li
+            a[hr="#"]
+              | 関連記事リンク１
+          li
+            a[hr="#"]
+              | 関連記事リンク２
+          li
+            a[hr="#"]
+              | 関連記事リンク３
+          li
+            a[hr="#"]
+              | 関連記事リンク４
+          li
+            a[hr="#"]
+              | 関連記事リンク５
+footer
+  .container-fluid
+    .row
+      .col-sm-8.col-md-9
+        ul.navbar-nav.list-inline
+          li
+            a[href="index.html"]
+              | ホーム
+          li
+            a[href="#"]
+              | 会社概要
+          li
+            a[href="#"]
+              | サービス
+          li
+            a[href="#"]
+              | 採用情報
+          li
+            a[href="#"]
+              | お問い合わせ
+          li
+            a[href="#"]
+              | サイトマップ
+          li
+            a[href="#"]
+              | プライバシーポリシー
+      .col-sm-4.col-md-3
+        address
+
+        dl
+          dt
+            | Bootstrapで作るレスポンシブWEBデザイン
+          dd
+            | 〒131-0000 東京都墨田区押上0-1-2
+          dd
+            | Tel 03-1234-5678 Fax 03-1234-5678
+          dd
+            | 東京スカイツリー駅より徒歩1分
+          dd
+            | 月～金　AM 9:00 ～ PM 5:00 日曜・祝日定休
+  .copyright
+    |  Copyright © Sakakibara Engineering Office All rights reserved. 
