@@ -1,0 +1,10 @@
+h1
+  | showの表示
+.containar
+  .row
+    .col-md-6
+      p aiueo
+    .col-md-6
+     - @comments.each do |s|
+       p= s.name
+       p= s.content
