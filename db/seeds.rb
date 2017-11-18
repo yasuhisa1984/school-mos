@@ -2,6 +2,8 @@ require 'faker'
 require 'ui_faces' 
 Faker::Config.locale = :ja
 
+
+#テーブルスクール
 10.times {
   name = Faker::Name.name
   school = []
@@ -30,3 +32,18 @@ Faker::Config.locale = :ja
             :school_image_url => school_image_url
           )
 }
+
+#テーブル コメント
+200.times {
+  name = Faker::Name.name
+  content = ['フヒヒww わろた', 'これはステマだわww', 'テレクラキャノンボール', 'テックアカデミー入ろう','DIVE INTO CODEってどうよ?'].sample
+  school_id = [*1..10].sample
+
+  Comment.create!(
+    :name => name,
+    :content => content,
+    :school_id => school_id, 
+
+  )
+}
+
