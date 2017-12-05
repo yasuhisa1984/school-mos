@@ -1,0 +1,7 @@
+.panel.panel-default
+  | コメント一覧
+  - comments.each_with_index do |comment, count|
+    - if comment.created_at.present?
+      p= comment_date(count + 1, comment.name, date_japan(comment.created_at))
+      p= comment.content
+      hr
