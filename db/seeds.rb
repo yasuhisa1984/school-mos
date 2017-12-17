@@ -47,3 +47,15 @@ Faker::Config.locale = :ja
   )
 }
 
+#テーブル　VOTE
+10.times {
+  comment_id = [1,2].sample
+  plus_or_minus = [1,-1].sample
+  cookie = "test"
+
+  Vote.create!(
+    :comment_id => comment_id,
+    :cookie => cookie,
+    :plus_or_minus => plus_or_minus
+  )
+}

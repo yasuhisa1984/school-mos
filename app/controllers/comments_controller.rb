@@ -11,6 +11,10 @@ class CommentsController < ApplicationController
       end
   end
 
+  def vote
+    @comment = Comment.new(comment_params)
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:school_id, :name, :content)

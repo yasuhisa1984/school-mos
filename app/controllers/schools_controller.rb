@@ -5,10 +5,11 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    ip = request.remote_ip
-    cookies.encrypted[:ipcookie] = { :value => ip, :expires => 30.days.from_now }
+    @vote = Vote
+    @plus = Vote.where('comment_id = ? and plus_or_minus= ?', 1, 1)
+    @minus = Vote.where('comment_id = ? and plus_or_minus= ?', 1, -1)
     @comment = @school.comments.build
-    @comments = @school.comments
+   @comments = @school.comments
   end
 
 
