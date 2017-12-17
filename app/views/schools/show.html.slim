@@ -1,10 +1,56 @@
-h1
-  | showの表示
-.containar
+.container
   .row
-    .col-md-6
-      p aiueo
-    .col-md-6
-     - @comments.each do |s|
-       p= s.name
-       p= s.content
+    .col-sm-9.col-md-9
+      section
+        .school_wrap
+          .col-sm-6.col-md-6
+            = link_to image_tag(@school.school_image_url,:size => "500x350"), :href => @school.url
+          .col-sm-6.col-md-6
+            = render partial: 'schools/detail'
+    .col-sm-9.col-md-9
+      section
+        .form_wrap
+        p#notice= notice
+        = render partial: 'comments/form', locals: { comment: @comment }
+        #comments_area
+          = render partial: 'comments/comment', locals: { comments: @comment.school.comments }
+    .col-sm-3.col-md-3
+      nav.sidebar
+        h3
+          | サブメニュー
+        ul.submenu
+          li
+            a[hr="#"]
+              | カテゴリリンク１
+          li
+            a[hr="#"]
+              | カテゴリリンク２
+          li
+            a[hr="#"]
+              | カテゴリリンク３
+          li
+            a[hr="#"]
+              | カテゴリリンク４
+          li
+            a[hr="#"]
+              | カテゴリリンク５
+      nav.sidebar
+        h3
+          | 関連情報
+        ul.submenu
+          li
+            a[hr="#"]
+              | 関連記事リンク１
+          li
+            a[hr="#"]
+              | 関連記事リンク２
+          li
+            a[hr="#"]
+              | 関連記事リンク３
+          li
+            a[hr="#"]
+              | 関連記事リンク４
+          li
+            a[hr="#"]
+              | 関連記事リンク５
+

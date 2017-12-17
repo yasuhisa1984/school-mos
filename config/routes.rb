@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :schools
+  resources :schools do
+    resources :comments
+      post :confirm, on: :collection
+    end
+  resources :comments
+  resources :votes
 end

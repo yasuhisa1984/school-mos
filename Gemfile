@@ -29,6 +29,8 @@ gem 'slim-rails'
 gem 'pry-rails'
 gem 'better_errors'
 gem 'ui_faces'
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem 'kaminari'
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'

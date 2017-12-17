@@ -1,0 +1,36 @@
+table.table.table-striped
+  tr
+    td
+      | 学校名
+    td
+      = @school.name
+  tr
+    td
+      | URL
+    td
+      = @school.url
+  tr
+    td
+      | 学費
+    td
+      = @school.price.to_s + "万円"
+  tr
+    td
+      | 言語
+    td
+      = @school.language
+  tr
+    td
+      | 住所
+    td
+      = @school.area.to_s + @school.address.to_s
+  tr
+    td
+      | リモート
+    td
+      = @school.remote
+  tr
+    td
+      | 目的
+    td
+      = @school.purpose
