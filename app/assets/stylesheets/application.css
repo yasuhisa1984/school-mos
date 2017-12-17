@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require jstree.min
+ *= require jquery-ui
  */
