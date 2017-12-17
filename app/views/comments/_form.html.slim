@@ -1,0 +1,7 @@
+= form_for([@school,comment], data: { remote: true }) do |f|
+  = f.label :名前
+  = f.text_field :name, class: 'form-control', :placeholder => "名前を入力"
+  = f.label :コメント
+  = f.text_area  :content, rows: 10, class: 'form-control', :placeholder => "コメントを書く"
+  = f.hidden_field :school_id, :value => @comment.school_id
+  = f.submit 'コメントを投稿する', class: 'btn btn-primary btn-block',:data => { :confirm => '本当に投稿しますか?' }
