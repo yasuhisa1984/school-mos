@@ -2,7 +2,9 @@
   | コメント一覧
   - comments.each_with_index do |comment, count|
     - if comment.created_at.present?
-      p= comment_date(count + 1, comment.name, date_japan(comment.created_at))
+      - page_num = 500
+      - page_pa = params[:page].to_i
+      p= comment_date("#{(page_pa * page_num) + (count + 1)}" , comment.name, date_japan(comment.created_at))
       p= comment.content
       .progress
         .progress-bar.progress-bar-success[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{plus_vote(@vote, comment.id)

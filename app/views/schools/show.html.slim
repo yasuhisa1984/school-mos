@@ -12,7 +12,9 @@
         .form_wrap
         = render partial: 'comments/form', locals: { comment: @comment }
         #comments_area
-          = render partial: 'comments/comment', locals: { comments: @comment.school.comments }
+          = page_entries_info @comments
+          = render partial: 'comments/comment', locals: { comments: @comments }
+        = paginate @comments
     .col-sm-3.col-md-3
       nav.sidebar
         h3

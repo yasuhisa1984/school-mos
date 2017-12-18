@@ -33,6 +33,7 @@ gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'kaminari'
 gem 'toastr-rails'
 gem 'dotenv-rails'
+gem 'rails-i18n'
 group :development do
   gem 'letter_opener_web'
 end
