@@ -31,6 +31,7 @@ gem 'better_errors'
 gem 'ui_faces'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'kaminari'
+gem 'toastr-rails'
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
