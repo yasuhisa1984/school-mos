@@ -47,7 +47,7 @@ class SchoolsController < ApplicationController
     @plus = Vote.where('comment_id = ? and plus_or_minus= ?', 1, 1)
     @minus = Vote.where('comment_id = ? and plus_or_minus= ?', 1, -1)
     @comment = @school.comments.build
-   @comments = @school.comments
+    @comments = @school.comments.page(params[:page])
   end
 
 
