@@ -4,42 +4,23 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
 
-    # エリア取得
-    # @areas = School.select(:area).distinct
-
-    ajax_action unless params[:ajax_handler].blank?
-
-
-
-    if params[:area_id]
-      @area_id = params[:area_id]
-      binding.pry
-      puts @area_id
-    end
     # エリア別情報取得
     @kantos = School.where(area: "関東地方")
     @chubus = School.where(area: "中部地方")
     @okinawas = School.where(area: "九州／沖縄地方")
     @hokaidos = School.where(area: "北海道／東北地方")
     @kinkis = School.where(area: "近畿地方")
-  end
-
-  def ajax_action
-    if params[:ajax_handler] == 'handle_name1'
-      # Ajaxの処理
-      @kanto = @schools.where(area: "関東地方")
-      if @data.size > 0
-        render
-      else
-        render json: 'no data'
-      end
-    end
-  end
-
-  def area_find
-    @kanto = @schools.where(area: "関東地方")
-    @chubu = @schools.where(area: "中部地方")
-    @okinawa = @schools.where(area: "九州／沖縄地方")
+    # 言語
+    @java = School.where(language: "java")
+    @ruby = School.where(language: "ruby")
+    @php = School.where(language: "php")
+    @net = School.where(language: ".net")
+    @python = School.where(language: "python")
+    # 目的
+    @hobby = School.where(purpose: "趣味")
+    @employment = School.where(purpose: "就職")
+    @business = School.where(purpose: "起業")
+    @friend = School.where(purpose: "仲間づくり")
   end
 
   def show
@@ -50,6 +31,11 @@ class SchoolsController < ApplicationController
    @comments = @school.comments
   end
 
+  def search
+    @school = School.find_by(id: params[:school_id])
+    # binding.pry
+    render json: @school
+  end
 
   private
     def set_school
