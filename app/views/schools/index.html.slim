@@ -1,4 +1,4 @@
-= render 'header'
+= render 'layouts/header'
 = render 'aside'
 .container-fluid
   .row
@@ -16,17 +16,20 @@
               th 言語
               th エリア
               th 目的
+              th
           tbody
             - @schools.each do |school|
               tr
                 td = school.name
                 td = school.price
+                td = school.language
                 td = school.area
                 td = school.purpose
                 td
                   img src="#{school.school_image_url}" /
         hr
-        h1 エリア
+        h2
+          | 君の住んでる地域のそばにも！？
         #jstree_categories
           ul
             li data-jstree=("{ \"opened\" : true }")
@@ -69,7 +72,8 @@
         ul#result
 
         hr
-        h1 プログラミング言語
+        h2
+          | 君のお気に入りプログラミング言語からさがそう！！
         #jstree
           ul
             li data-jstree=("{ \"opened\" : false }")
@@ -112,7 +116,8 @@
         ul#result2
 
         hr
-        h1 目的
+        h2
+          | 君の目的でわかりやすくさがそう！！
         #jstree2
           ul
             li data-jstree=("{ \"opened\" : false }")
@@ -151,4 +156,4 @@
 
     = render 'nav'
 
-= render 'footer'
+= render 'layouts/footer'
