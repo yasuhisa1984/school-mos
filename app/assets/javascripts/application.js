@@ -17,3 +17,4 @@
 //= require twitter/bootstrap
 //= require jstree.min
 //= require jquery-ui
+//= require toastr
