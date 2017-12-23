@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+    <%= render 'schools/aside' %>
+
     <%= yield %>  
   <!-- flashにメッセージがある時 -->
   <p class="alert"><%= alert %></p>
@@ -19,9 +22,7 @@
         toastr['<%= type %>']('<%= f[1] %>');
     <% end %>
   </script>
-  <% end %>
-
-
-
+  <% end %> 
+    <%= render :partial =>'layouts/footer' %>
   </body>
 </html>

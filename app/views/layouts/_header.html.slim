@@ -1,6 +1,6 @@
 header
   h1
-    | スクールモス
+    | スクールもす
 nav.navbar.navbar-default[role="navigation"]
   .container
     .navbar-header
@@ -15,31 +15,31 @@ nav.navbar.navbar-default[role="navigation"]
     .navbar-collapse.collapse
       ul.nav.navbar-nav
         li
-          a[href="./" title="ホーム"]
+          = link_to root_path do
             | ホーム
             br
             span
               | HOME
         li
-          a[href="index.html" title="会社概要"]
-            | 会社概要
+          = link_to page_path('enquete') do
+            | アンケート
+            br
+            span 
+              | ENQUETE
+        li 
+          = link_to page_path('about') do
+            | スクールモスについて
             br
             span
-              | COMPANY
-        li
-          a[href="index.html" title="サービス"]
-            | サービス
+              | About 
+        li 
+          = link_to page_path('agreement') do
+            | 利用規約
             br
             span
-              | SERVICE
-        li
-          a[href="index.html" title="採用情報"]
-            | 採用情報
-            br
-            span
-              | RECRIT
-        li
-          a[href="index.html" title="お問い合わせ"]
+              | AGREEMENT
+        li 
+          = link_to page_path('enquete') do
             | お問い合わせ
             br
             span
