@@ -1,65 +1,5 @@
-header
-  h1
-    | スクールモス
-nav.navbar.navbar-default[role="navigation"]
-  .container
-    .navbar-header
-      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
-        span.sr-only
-          | Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      span.navbar-brand.visible-xs
-        | メニュー
-    .navbar-collapse.collapse
-      ul.nav.navbar-nav
-        li
-          a[href="index.html" title="ホーム"]
-            | ホーム
-            br
-            span
-              | HOME
-        li
-          a[href="index.html" title="会社概要"]
-            | 会社概要
-            br
-            span
-              | COMPANY
-        li
-          a[href="index.html" title="サービス"]
-            | サービス
-            br
-            span
-              | SERVICE
-        li
-          a[href="index.html" title="採用情報"]
-            | 採用情報
-            br
-            span
-              | RECRIT
-        li
-          a[href="index.html" title="お問い合わせ"]
-            | お問い合わせ
-            br
-            span
-              | CONTACT
-aside#my-carousel.carousel.slide[data-ride="carousel" data-interval="8000"]
-  ol.carousel-indicators
-    li.active[data-target="#my-carousel" data-slide-to="0"]
-    li[data-target="#my-carousel" data-slide-to="1"]
-    li[data-target="#my-carousel" data-slide-to="2"]
-  .carousel-inner
-    .item.active
-     = image_tag("school-mos-1.png")
-    .item
-     = image_tag("school-mos-2.png")
-    .item
-     = image_tag("school-mos-3.png")
-  a.left.carousel-control[href="#my-carousel" data-slide="prev"]
-    span.glyphicon.glyphicon-chevron-left
-  a.right.carousel-control[href="#my-carousel" data-slide="next"]
-    span.glyphicon.glyphicon-chevron-right
+= render 'layouts/header'
+= render 'aside'
 .container-fluid
   .row
     .col-sm-9.col-md-9
@@ -67,21 +7,29 @@ aside#my-carousel.carousel.slide[data-ride="carousel" data-interval="8000"]
         h2
           | スクール最新情報　今ここが熱いかも！！
         h1 スクール一覧
-        - @schools.each do |school|
-          p = school.name
-          p = school.url
-          p = school.price
-          p = school.language
-          p = school.area
-          p = school.address
-          p = school.remote
-          p = school.purpose
-          p = school.deadline_date
-          img[src="#{school.school_image_url}"]
-          hr
-
+        .table-responsive
+        table.table
+          thead
+            tr
+              th スクール名
+              th 値段
+              th 言語
+              th エリア
+              th 目的
+              th
+          tbody
+            - @schools.each do |school|
+              tr
+                td = school.name
+                td = school.price
+                td = school.language
+                td = school.area
+                td = school.purpose
+                td
+                  img src="#{school.school_image_url}" /
         hr
-        h1 エリア検索
+        h2
+          | 君の住んでる地域のそばにも！？
         #jstree_categories
           ul
             li data-jstree=("{ \"opened\" : true }")
@@ -89,237 +37,123 @@ aside#my-carousel.carousel.slide[data-ride="carousel" data-interval="8000"]
               ul
                 - @hokaidos.each do |hokaido|
                   li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                    span = link_to hokaido.name, schools_path, method: :post, remote: true
+                    span id="a#{hokaido.id}"
+                      = link_to hokaido.name, controller: "schools", action: "index", :id => hokaido.id, school_id: hokaido.id, remote: true
             li data-jstree=("{ \"opened\" : false }")
               b 関東地方
               ul
                 - @kantos.each do |kanto|
                   li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                    //span = link_to kanto.name, schools_path, method: :post, remote: true
-                    span = link_to kanto.name, schools_path(kanto.id), method: :get, remote: true
+                    span id="a#{kanto.id}"
+                      = link_to kanto.name, controller: "schools", action: "index", :id => kanto.id, school_id: kanto.id, remote: true
             li data-jstree=("{ \"opened\" : false }")
               b 中部地方
               ul
                 - @chubus.each do |chubu|
-                  li
-                    span = link_to chubu.name, controller: "schools", action: "index", :id => chubu.id, school_id: chubu.id, remote: true
-
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="a#{chubu.id}"
+                      = link_to chubu.name, controller: "schools", action: "index", :id => chubu.id, school_id: chubu.id, remote: true
             li data-jstree=("{ \"opened\" : false }")
               b 近畿地方
               ul
                 - @kinkis.each do |kinki|
                   li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                    span = kinki.name
+                    span id="a#{kinki.id}"
+                      = link_to kinki.name, controller: "schools", action: "index", :id => kinki.id, school_id: kinki.id, remote: true
             li data-jstree=("{ \"opened\" : false }")
               b 九州／沖縄地方
               ul
                 - @okinawas.each do |okinawa|
                   li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                    span = okinawa.name
+                    span id="a#{okinawa.id}"
+                      = link_to okinawa.name, controller: "schools", action: "index", :id => okinawa.id, school_id: okinawa.id, remote: true
 
-        //#school_infomation
-          //= render partial: 'shools/index', locals: { school: @school }
-
-        hr
-        #tree
-          ul
-            - @chubus.each do |chubu|
-              li.chubu id="key#{chubu.id}"
-                = chubu.id
-                | \: #{chubu.name}
-
-        ul#menu-2
-        li
-        - @chubus.each do |chubu|
-          h3
-            span エリア検索
-          ul
-            li.active
-              link_to chubu.name, controller: "schools", action: "index", :id => chubu.id, school_id: chubu.id, remote: true
-        li
-          h3
-            span Funny sites
-          ul
-            li
-              a href="http://www.google.com"  Google
-            li
-              a href="http://www.bing.com"  Bing
-            li
-              a href="http://www.yahoo.com"  Yahoo
-        li
-          h3
-            span Search Engines
-          ul
-            li
-              a href="http://www.google.com"  Google
-            li
-              a href="http://www.bing.com"  Bing
-            li
-              a href="http://www.yahoo.com"  Yahoo
-        hr
-
+        /! ここに表示
+        ul#result
 
         hr
-        h1 目的別検索
-        h2 = form_tag({:controller => 'schools', :action => 'index'}, :remote => true, :class => 'form-ajax') do
-          = hidden_field_tag :ajax_handler, '1'
-          = submit_tag('目的別', :class => 'btn btn-primary btn-sm')
-        hr
-        h1 言語別検索
-        #jstree_categories
+        h2
+          | 君のお気に入りプログラミング言語からさがそう！！
+        #jstree
           ul
-            li data-jstree="{\"opened\":true}"
-              | Root node 1
+            li data-jstree=("{ \"opened\" : false }")
+              b Java
               ul
-                li Child node 1
-                li Child node 2
-            li
-              | Root node 2
+                - @java.each do |j|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="l#{j.id}"
+                      = link_to j.name, controller: "schools", action: "index", :id => j.id, school_id: j.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b Ruby
+              ul
+                - @ruby.each do |r|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="l#{r.id}"
+                      = link_to r.name, controller: "schools", action: "index", :id => r.id, school_id: r.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b PHP
+              ul
+                - @php.each do |p1|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="l#{p1.id}"
+                      = link_to p1.name, controller: "schools", action: "index", :id => p1.id, school_id: p1.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b .NET
+              ul
+                - @net.each do |net|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="l#{net.id}"
+                      = link_to net.name, controller: "schools", action: "index", :id => net.id, school_id: net.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b python
+              ul
+                - @python.each do |p2|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="l#{p2.id}"
+                      = link_to p2.name, controller: "schools", action: "index", :id => p2.id, school_id: p2.id, remote: true
+
+        /! ここに表示
+        ul#result2
+
         hr
-        .form-inline
-          img[src="https://diveintocode.jp/assets/way_01-7a6dbde633f5fc8874203d7929bb892df2579fb2476a34211c406bb58f45e3c0.jpg"]
-          p
-            | 当テンプレートは
-            a[href="http://www.saka-en.com/" title="ホームページ制作のサカエン"]
-              | ホームページ制作のサカエン
-            |  が
-            a[hr="http://getbootstrap.com/" title="Bootstrap · The world's most popular mobile-first and responsive front-end framework." rel="nofollow"]
-              | Bootstrap
-            |  3.3.4 で作った「コーポレートサイト向けホームページテンプレート」です。情報の掲載には細心の注意を払っておりますが、完全性等について保証を行うものではありませんので予めご了承ください。
-      section
         h2
-          | レスポンシブWEBデザイン
-        p
-          | 当テンプレートは レスポンシブWEBデザイン(html5+CSS3) です。パソコン、タブレット、スマートフォンに対応しています。尚、新しいブラウザ(IEならIE8以降)でないと全ての効果を確認する事はできません。詳しくは
-          a[hr="http://getbootstrap.com/" title="Bootstrap · The world's most popular mobile-first and responsive front-end framework." rel="nofollow"]
-            | Bootstrap
-          |  公式サイトにて確認ください。
-      section
-        h2
-          | ご利用になりたい方へ
-        p
-          a[hr="http://www.saka-en.com/contact/" title="ホームページ制作のサカエンへのお問い合わせ" target="_blank"]
-            | 当テンプレートをご利用になりたい方はこちらよりお問い合わせください。
-      section.news
-        h2
-          | 更新情報・お知らせ
-        dl
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | htmlににtimeタグを使っています。必要に応じて設定できますし、不要なら削除することもできます。
-            img[src="images/new.gif" alt="New" width="34" height="11"]
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-          dt
-            time[datetime="2999-12-31"]
-              | 2999/12/31
-          dd
-            | ホームページリニューアル
-    .col-sm-3.col-md-3
-      nav.sidebar
-        h3
-          | サブメニュー
-        ul.submenu
-          li
-            a[hr="#"]
-              | カテゴリリンク１
-          li
-            a[hr="#"]
-              | カテゴリリンク２
-          li
-            a[hr="#"]
-              | カテゴリリンク３
-          li
-            a[hr="#"]
-              | カテゴリリンク４
-          li
-            a[hr="#"]
-              | カテゴリリンク５
-      nav.sidebar
-        h3
-          | 関連情報
-        ul.submenu
-          li
-            a[hr="#"]
-              | 関連記事リンク１
-          li
-            a[hr="#"]
-              | 関連記事リンク２
-          li
-            a[hr="#"]
-              | 関連記事リンク３
-          li
-            a[hr="#"]
-              | 関連記事リンク４
-          li
-            a[hr="#"]
-              | 関連記事リンク５
+          | 君の目的でわかりやすくさがそう！！
+        #jstree2
+          ul
+            li data-jstree=("{ \"opened\" : false }")
+              b 趣味
+              ul
+                - @hobby.each do |ho|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="p#{ho.id}"
+                      = link_to ho.name, controller: "schools", action: "index", :id => ho.id, school_id: ho.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b 就職
+              ul
+                - @employment.each do |em|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="p#{em.id}"
+                      = link_to em.name, controller: "schools", action: "index", :id => em.id, school_id: em.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b 起業
+              ul
+                - @business.each do |bu|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="p#{bu.id}"
+                      = link_to bu.name, controller: "schools", action: "index", :id => bu.id, school_id: bu.id, remote: true
+            li data-jstree=("{ \"opened\" : false }")
+              b 仲間づくり
+              ul
+                - @friend.each do |fr|
+                  li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                    span id="p#{fr.id}"
+                      = link_to fr.name, controller: "schools", action: "index", :id => fr.id, school_id: fr.id, remote: true
 
+        /! ここに表示
+        ul#result3
+        hr
+      = render 'section'
 
-footer
-  .container-fluid
-    .row
-      .col-sm-8.col-md-9
-        ul.navbar-nav.list-inline
-          li
-            a[href="index.html"]
-              | ホーム
-          li
-            a[href="#"]
-              | 会社概要
-          li
-            a[href="#"]
-              | サービス
-          li
-            a[href="#"]
-              | 採用情報
-          li
-            a[href="#"]
-              | お問い合わせ
-          li
-            a[href="#"]
-              | サイトマップ
-          li
-            a[href="#"]
-              | プライバシーポリシー
-      .col-sm-4.col-md-3
-        address
+    = render 'nav'
 
-        dl
-          dt
-            | Bootstrapで作るレスポンシブWEBデザイン
-          dd
-            | 〒131-0000 東京都墨田区押上0-1-2
-          dd
-            | Tel 03-1234-5678 Fax 03-1234-5678
-          dd
-            | 東京スカイツリー駅より徒歩1分
-          dd
-            | 月～金　AM 9:00 ～ PM 5:00 日曜・祝日定休
-  .copyright
-    |  Copyright © Sakakibara Engineering Office All rights reserved.
+= render 'layouts/footer'
