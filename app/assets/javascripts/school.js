@@ -34,19 +34,19 @@
       $(data).each(function(i, school){ //dataをuserという変数に代入して、以下のことを繰り返し行う(単純なeach文ですね)
         if (flag == 'a') {
           $('#result').append('<li style=list-style:none><h2>スクール情報</h2></li>')
-          $('#result').append('<li style=list-style:none>スクール名：<a href=./' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
+          $('#result').append('<li style=list-style:none>スクール名：<a href=./schools/' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
           $('#result').append('<li style=list-style:none>値段：' + school.price + '</li>')
           $('#result').append('<li style=list-style:none>習える言語：' + school.language + '</li>')
           $('#result').append('<li style=list-style:none><img src=' + school.school_image_url + '></img></li>')
         } else if (flag == 'l') {
           $('#result2').append('<li style=list-style:none><h2>スクール情報</h2></li>')
-          $('#result2').append('<li style=list-style:none>スクール名：<a href=./' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
+          $('#result2').append('<li style=list-style:none>スクール名：<a href=./schools/' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
           $('#result2').append('<li style=list-style:none>値段：' + school.price + '</li>')
           $('#result2').append('<li style=list-style:none>習える言語：' + school.language + '</li>')
           $('#result2').append('<li style=list-style:none><img src=' + school.school_image_url + '></img></li>')
         } else if (flag == 'p') {
           $('#result3').append('<li style=list-style:none><h2>スクール情報</h2></li>')
-          $('#result3').append('<li style=list-style:none>スクール名：<a href=./' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
+          $('#result3').append('<li style=list-style:none>スクール名：<a href=./schools/' + school.id + '>' + school.name + '</a></li>') //resultというidの要素に対して、<li>ユーザーの名前</li>を追加する。
           $('#result3').append('<li style=list-style:none>値段：' + school.price + '</li>')
           $('#result3').append('<li style=list-style:none>習える言語：' + school.language + '</li>')
           $('#result3').append('<li style=list-style:none><img src=' + school.school_image_url + '></img></li>')
