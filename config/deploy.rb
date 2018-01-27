@@ -11,7 +11,7 @@ set :repo_url, 'https://github.com/yasuhisa1984/school-mos'
 
 # deployするブランチ。デフォルトはmaster
 # この記載をすることで bundle exec cap production deploy BRANCH=ブランチ名で特定のブランチをデプロイできるようになる
-set :branch, ENV['BRANCH'] || 'master'
+set :branch, ENV['BRANCH'] || 'deploy2'
 
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/school-mos'

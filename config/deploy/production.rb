@@ -65,8 +65,8 @@ set :stage, :production
 # RAILS_ENVに設定する値
 set :rails_env, :production
 
-role :app, %w{ yasuhisa@v150-95-185-205.a0eb.g.tyo1.static.cnode.io }
-role :web, %w{ yasuhisa@v150-95-185-205.a0eb.g.tyo1.static.cnode.io }
-role :db,  %w{ yasuhisa@v150-95-185-205.a0eb.g.tyo1.static.cnode.io }
+role :app, %w{ penmouse275@v150-95-133-129.a07e.g.tyo1.static.cnode.io/ }
+role :web, %w{ penmouse275@v150-95-133-129.a07e.g.tyo1.static.cnode.io/ }
+role :db,  %w{ penmouse275@v150-95-133-129.a07e.g.tyo1.static.cnode.io/ }
 
 set :ssh_options, keys: '/Users/penmouse275/.ssh/id_rsa'
