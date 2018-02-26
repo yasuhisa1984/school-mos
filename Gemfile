@@ -36,7 +36,7 @@ gem 'dotenv-rails'
 gem 'rails-i18n'
 gem 'unicorn'
 gem 'high_voltage'
-
+gem 'rails-erd', group: [:development, :test]
 
 group :development do
   gem 'letter_opener_web'
