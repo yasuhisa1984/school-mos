@@ -34,6 +34,11 @@ gem 'kaminari'
 gem 'toastr-rails'
 gem 'dotenv-rails'
 gem 'rails-i18n'
+gem 'unicorn'
+gem 'high_voltage'
+gem 'rails-erd', group: [:development, :test]
+gem "font-awesome-rails"
+
 group :development do
   gem 'letter_opener_web'
 end
@@ -46,6 +51,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

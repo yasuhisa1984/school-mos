@@ -29,6 +29,7 @@ class SchoolsController < ApplicationController
     @minus = Vote.where('comment_id = ? and plus_or_minus= ?', 1, -1)
     @comment = @school.comments.build
     @comments = @school.comments.page(params[:page])
+    render layout: 'show'
   end
 
   def search
