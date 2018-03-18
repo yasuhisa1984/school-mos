@@ -1,23 +1,28 @@
-.panel.panel-default
+.panel.panel-default.comments__area_center
   | コメント一覧
   - comments.each_with_index do |comment, count|
-    - if comment.created_at.present?
-      - page_num = 500
-      - page_pa = params[:page].to_i
-      p= comment_date("#{(page_pa * page_num) + (count + 1)}" , comment.name, date_japan(comment.created_at))
-      p= comment.content
-      .progress
-        .progress-bar.progress-bar-success[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{plus_vote(@vote, comment.id)
-}%"]
-          |  (Good)
-        .progress-bar.progress-bar-warning[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{minus_vote(@vote, comment.id)
-}%"]
-          |  (Bad)
-      = link_to votes_path(comment, params: {is_up: true, comment_id: comment.id, comment: comments}), method: :post, remote: true do
-        .fa
-          | プラスボタン
-      = link_to votes_path(comment, params: {is_up: false, comment_id: comment.id}), method: :post, remote: true do
-        .fa
-          | マイナスボタン
-      hr
-    
+    .comments__data
+      - if comment.created_at.present?
+        - page_num = 500
+        - page_pa = params[:page].to_i
+        p= comment_date("#{(page_pa * page_num) + (count + 1)}" , comment.name, date_japan(comment.created_at))
+      .comments__item
+        = comment.content
+      .comments__plus_minus 
+        .progress.comments__progress_center
+          .progress-bar.progress-bar-success[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{plus_vote(@vote, comment.id)
+  }%"]
+            |  (Good)
+          .progress-bar.progress-bar-warning[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{minus_vote(@vote, comment.id)
+  }%"]
+            |  (Bad)
+        .comments_vote_area
+          = link_to votes_path(comment, params: {is_up: true, comment_id: comment.id, comment: comments}), method: :post, remote: true do
+            i.fa.fa-smile-o.fa-3x
+          = link_to votes_path(comment, params: {is_up: false, comment_id: comment.id}), method: :post, remote: true do
+            i.fa.fa-frown-o.fa-3x
+        hr
+.comment
+  .comment__data
+  .comment__data.comment_size_l.comment_color_red
+
