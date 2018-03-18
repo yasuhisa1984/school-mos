@@ -11,4 +11,10 @@ Rails.application.routes.draw do
     end
   resources :comments
   resources :votes
+  get 'contact' => 'contacts#index'
+  post 'contact/confirm' => 'contacts#confirm'
+  post 'contact/thanks' => 'contacts#thanks'
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
