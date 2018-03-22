@@ -2,8 +2,8 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit ,:update,:destroy]
 
   def index
-    @schools = School.all
-
+    ranking =Comment.all.group(:school_id).order('count(school_id) desc').limit(5).pluck(:school_id)
+    @schools = School.find(ranking)
     # エリア別情報取得
     @kantos = School.where(area: "関東地方")
     @chubus = School.where(area: "中部地方")

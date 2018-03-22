@@ -1,57 +1,44 @@
-.container
-  .row
-    .col-sm-9.col-md-9
-      section
-        .school_wrap
-          .col-sm-6.col-md-6
-            = link_to image_tag(@school.school_image_url,:size => "500x350"), :href => @school.url
-          .col-sm-6.col-md-6
-            = render partial: 'schools/detail'
-    .col-sm-9.col-md-9
-      section
-        .form_wrap
-        = render partial: 'comments/form', locals: { comment: @comment }
-        #comments_area
-          = page_entries_info @comments
+.wrapper
+  .container
+    .row
+      .col-sm-12.col-md-9.bgc_white
+        section
+          h1
+            = @school.name 
+          .school_wrap
+            .col-sm-12.col-md-12.school__img
+              = link_to image_tag(@school.school_image_url), :href => @school.url
+            .col-sm-12.col-md-12
+              = render partial: 'schools/detail'
+              p
+                |ここに特色など書いて行くここに特色など書いて行く
+                |ここに特色など書いて行くここに特色など書いて行く
+                |ここに特色など書いて行くここに特色など書いて行く
+                |ここに特色など書いて行くここに特色など書いて行く
+                |ここに特色など書いて行くここに特色など書いて行く
+            .school__koushiki
+              = link_to image_tag("koushiki.png"), :href => @school.url
+      = render 'nav'
+      .col-sm-12.col-md-9
+        section
+            .panel.panel-default
+              .panel-body.school__panelbody_center
+                .school__image
+                = image_tag(@school.school_image_url,:size => "50x50")
+                .school__name
+                  .school_name_font
+                    = @school.name
+                    | について語ろう
+                  .school__comment
+                  i.fa.fa-commenting-o 
+                  | コメント
+                  = @school.comments.count
+                .school__submit
+                  = link_to :anchor => 'form' do
+                    button.btn.btn-primary.btn-lg type="button" コメントを投稿する
+        .comments__area
           = render partial: 'comments/comment', locals: { comments: @comments }
+        #form
+          = render partial: 'comments/form', locals: { comment: @comment }
         = paginate @comments
-    .col-sm-3.col-md-3
-      nav.sidebar
-        h3
-          | サブメニュー
-        ul.submenu
-          li
-            a[hr="#"]
-              | カテゴリリンク１
-          li
-            a[hr="#"]
-              | カテゴリリンク２
-          li
-            a[hr="#"]
-              | カテゴリリンク３
-          li
-            a[hr="#"]
-              | カテゴリリンク４
-          li
-            a[hr="#"]
-              | カテゴリリンク５
-      nav.sidebar
-        h3
-          | 関連情報
-        ul.submenu
-          li
-            a[hr="#"]
-              | 関連記事リンク１
-          li
-            a[hr="#"]
-              | 関連記事リンク２
-          li
-            a[hr="#"]
-              | 関連記事リンク３
-          li
-            a[hr="#"]
-              | 関連記事リンク４
-          li
-            a[hr="#"]
-              | 関連記事リンク５
 
