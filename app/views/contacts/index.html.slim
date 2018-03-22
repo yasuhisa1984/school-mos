@@ -3,7 +3,7 @@
     .alert.alert-danger role="alert"
       strong 入力内容にエラーがあります
       ul
-        - @inquiry.errors.each do |attr, msg|
+        - @contact.errors.each do |attr, msg|
           li= msg
   table.table
     tr
