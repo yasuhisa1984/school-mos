@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105071051) do
+ActiveRecord::Schema.define(version: 20180321125010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20171105071051) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_comments_on_school_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "schools", force: :cascade do |t|
@@ -37,6 +45,19 @@ ActiveRecord::Schema.define(version: 20171105071051) do
     t.string "school_image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "staff_members", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "email_for_index", null: false
+    t.string "name", null: false
+    t.string "hashed_password"
+    t.date "start_date", null: false
+    t.date "end_date"
+    t.boolean "suspended", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email_for_index"], name: "index_staff_members_on_email_for_index", unique: true
   end
 
   create_table "votes", force: :cascade do |t|

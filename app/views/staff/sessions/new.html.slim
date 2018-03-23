@@ -1,0 +1,12 @@
+- @title = 'ログイン'
+#login-form
+  h1= @title
+  = form_for @form, url: :staff_session do |f|
+    div
+      = f.label :email, 'メールアドレス'
+      = f.text_field :email
+    div
+      = f.label :hashed_password, 'パスワード'
+      = f.password_field :hashed_password
+    div
+      = f.submit 'ログイン'
