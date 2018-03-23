@@ -1,0 +1,15 @@
+h1 お問い合わせ完了
+p 以下の様に承りました。
+table
+  tr
+    th 名前
+    td
+      = @contact.name
+  tr
+    th メールアドレス
+    td
+      = @contact.email
+  tr
+    th お問い合わせ内容
+    td
+      = simple_format(@contact.content)
