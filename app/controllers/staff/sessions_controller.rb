@@ -1,5 +1,5 @@
 class Staff::SessionsController < Staff::Base
-  layout 'staff'
+  skip_before_action :authorize
   def new
     if current_staff_member
       redirect_to :staff_root
@@ -12,7 +12,7 @@ class Staff::SessionsController < Staff::Base
   def create
     @form = Staff::LoginForm.new(staff_params)
     if @form.email.present?
-      staff_member = StaffMember.find_by(params[:staff_login_fom])
+      staff_member = StaffMember.find_by(email_for_index: @form.email.downcase)
     end
 
     if staff_member
@@ -34,6 +34,6 @@ class Staff::SessionsController < Staff::Base
   private
 
   def staff_params
-    params.require(:staff_login_form).permit(:email, :hashed_password)
+    params.require(:staff_login_form).permit(:email, :password)
   end
 end

@@ -1,4 +1,7 @@
 class Staff::Base < ApplicationController
+  before_action :authorize
+  layout 'staff'
+
   private
   def current_staff_member
     if session[:staff_member_id]

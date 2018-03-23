@@ -1,7 +1,5 @@
 class Staff::TopController < Staff::Base
-  before_action :authorize
-  layout 'staff'
-
+  skip_before_action :authorize
   def index
     render action: 'index'
   end
