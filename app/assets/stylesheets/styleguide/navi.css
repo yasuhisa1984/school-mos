@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*doc
+---
+title: Buttons
+name: button
+category: Base CSS
+---
+ボタンのスタイルは計6種類あります．
+
+
+```html_example
+<div class="navi">navi</div>
+<div class="navi navi_button_large">navi</div>
+<div class="navi navi_button_small">navi</div>
+```
+*/
+
+
+
+.navi {
+  /* 継承元 */ }
+  .navi .navi__button_large, .navi .navi__button_small {
+    border: solid 1px #999;
+    box-shadow: 0 2px 2px #aaa; }
+  .navi__button_large {
+    /* %__buttonのスタイルを継承 */
+    width: 300px;
+    height: 80px; }
+  .navi__button_small {
+    /* %__buttonのスタイルを継承 */
+    width: 100px;
+    height: 40px; }
+
+.navi_color-background-red {
+  background-color: red; }
+.navi_color-background-gray {
+  background-color: gray; }
+.navi__button1 {
+  padding: 8px 0;
+  width: 100px; }
+  .navi__button1_color-background-red {
+    background-color: red; }
+  .navi__button1_color-background-gray {
+    background-color: gray; }
+  .navi__button1_color-font-black {
+    color: black; }
+  .navi__button1_color-font-white {
+    color: white; }
+.navi__button2 {
+  padding: 16px 0;
+  width: 300px; }
+  .navi__button2_color-background-red {
+    background-color: red; }
+  .navi__button2_color-background-gray {
+    background-color: gray; }
+  .navi__button2_color-font-black {
+    color: black; }
+  .navi__button2_color-font-white {
+    color: white; }
