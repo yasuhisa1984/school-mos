@@ -143,15 +143,6 @@ category: icon CSS
 
 
 *----- Genral Classes start ------*/
-.wrapper, .copyright {
-  padding: 20px;
-  text-align: center; }
-
-hr {
-  margin: 30px 20px;
-  border-top: 2px solid #1C1E26;
-  border-bottom: 2px solid #38404D; }
-
 .list-unstyled {
   padding-left: 0;
   list-style: none; }

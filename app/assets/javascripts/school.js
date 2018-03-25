@@ -1,20 +1,6 @@
  $(document).ready(function(){ //リロードしなくてもjsが動くようにする
-  // $(document).on('click', '#j1_7', function(e){ //このアプリケーション(document)の、formというid('#form')で、キーボードが押され指が離れた瞬間(.on('keyup'...))、eという引数を取って以下のことをしなさい(function(e))
-  //   e.preventDefault(); //キャンセル可能なイベントをキャンセル
-  //   var input = $.trim($(this).val()); //この要素に入力された語句を取得し($(this).val())、前後の不要な空白を取り除いた($.trim(...);)上でinputという変数に(var input =)代入
-  //   alert('test');
-  // });
-  // jQuery(function(){
-  // 	jQuery("#4").click(function(e){
-  // 		alert(e.target.id);
-  // 		// alert(e.target.className);
-  // 	});
-  // });
-  // jQuery("a").click(function(e){
-  //   alert(e.target.id);
-  // });
 
-  $('body').on('click', 'span', function(e){
+   $('body').on('click', 'span', function(e){
     id = $(this).attr("id");　// idの取得
     flag = id.slice(0,1);
     id = id.slice(-1); // idに分割
