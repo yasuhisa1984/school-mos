@@ -1,8 +1,8 @@
 # スタイルガイドのもとになるスタイルシートファイルがあるディレクトリ
-source: ../stylesheets
+source: ../stylesheets/styleguide
 
 # スタイルガイドの書き出し先のディレクトリ
-destination: ../../views/pages
+destination: ../../../styleguide
 
 # スタイルガイドのテンプレートがあるディレクトリ
 documentation_assets: ../../../doc_assets
