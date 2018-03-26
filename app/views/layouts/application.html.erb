@@ -10,9 +10,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <%= render 'schools/aside' %>
+    <%= render 'layouts/carousel' %>
 
-    <%= yield %>  
+    <%= yield %>
   <!-- flashにメッセージがある時 -->
   <p class="alert"><%= alert %></p>
   <% unless flash.empty? %>

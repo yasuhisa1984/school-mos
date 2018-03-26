@@ -5,3 +5,20 @@ body {
 }
 
 
+//bootsrap overwrite
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>thead>tr>th {
+    border-style: none;
+  }
+
+  .alert, .alert-danger{
+    background-color: transparent;;
+  ul{
+    padding: 0;
+  }
+  li {
+      list-style-type: none;
+    }
+  }
+
