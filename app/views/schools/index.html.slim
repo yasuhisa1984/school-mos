@@ -7,24 +7,7 @@
             .panel-heading
                 p
                   | スクール最新情報　今ここが熱いかも！！
-        - @schools.each.with_index do |school, i|
-            .panel-body
-              .panel-image
-                = link_to "/schools/#{school.id}" do
-                  = image_tag school.school_image_url,:size => "150x70"
-              .panel-wrap
-                  .panel-ranking
-                    p
-                      sapn.rank1
-                        | #{i + 1}位 
-                      i.fa.fa-commenting-o 
-                        | #{school.comments.count}コメント
-                        span.time
-                        = time_ago_in_words(school.created_at)
-                        | 前
-                  .panel-content
-                    = link_to "/schools/#{school.id}" do
-                      = school.name
+        = render partial: 'school', collection: @schools, type: :details
         .panel-heading
           | 君の住んでる地域のそばにも！？
         .panel-body-search
