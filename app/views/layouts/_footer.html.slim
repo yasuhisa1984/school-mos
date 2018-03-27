@@ -4,26 +4,16 @@ footer.mt-xl
       .col-sm-8.col-md-9
         ul.navbar-nav.list-inline
           li
-            a[href="index.html"]
-              | ホーム
+            = link_to "ホーム", root_path
           li
-            a[href="#"]
-              | 会社概要
+            = link_to "アンケート", page_path("enquete")
           li
-            a[href="#"]
-              | サービス
+            = link_to "スクールモスについて", page_path("about")
           li
-            a[href="#"]
-              | 採用情報
+            = link_to "利用規約", page_path("agreement")
           li
-            a[href="#"]
-              | お問い合わせ
-          li
-            a[href="#"]
-              | サイトマップ
-          li
-            a[href="#"]
-              | プライバシーポリシー
+            = link_to "お問い合わせ", contact_path
       .col-sm-4.col-md-3
-    .copyright
-      |  Copyright © School MOS All rights reserved.
+        .copyright
+          |  Copyright © School MOS All rights reserved.
+

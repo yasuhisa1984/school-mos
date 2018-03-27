@@ -266,43 +266,6 @@ h2:before{
     color: gray;
 }
 
-.panel-heading {
-  font-size: 1.8rem;
-    height: 50px;
-    color: #333;
-    background-color: #f7b10f;
-    border-color: #ddd;
-    margin-bottom: 5px;
-}
-
-.panel-body {
-    display: flex;
-    justify-content: left;
-    padding: 15px;
-    background-color: white;
-    margin-bottom: 5px;
-    height: 95px;
-}
-.panel-body {
-    display: flex;
-    justify-content: left;
-    padding: 15px;
-    background-color: white;
-    margin-bottom: 5px;
-    height: 95px;
-}
-
-
-.panel-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.panel-ranking {
-  height: 50%;
-  width: 100%;
-}
-
 
 .school__image {
 
@@ -333,10 +296,6 @@ h2:before{
  margin-left: 10px;
 }
 
-.panel-image {
-  justify-content: left;
-  width: 170px;
-}
 
 .panel-content {
   width: 100%;

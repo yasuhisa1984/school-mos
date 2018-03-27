@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-8
-      h1
+      h1.panel-heading.panel__heading 
         |お問い合わせ
       = form_for @contact, :url => contact_confirm_path do |f|
         .form__error_explanation
