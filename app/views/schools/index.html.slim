@@ -4,127 +4,127 @@
       .col-sm-12.col-md-8
         .main
             .panel.panel-default
-            .panel-heading
+            .panel-heading.panel__heading
                 p
                   | スクール最新情報　今ここが熱いかも！！
         = render partial: 'school', collection: @schools, type: :details
-        .panel-heading
+        .panel-heading.panel__heading.mt-lg
           | 君の住んでる地域のそばにも！？
-        .panel-body-search
-          #jstree_categories
-            ul
-              li data-jstree=("{ \"opened\" : true }")
-                b 北海道/東北地方
-                ul
-                  - @hokaidos.each do |hokaido|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="a#{hokaido.id}"
-                        = link_to hokaido.name, controller: "schools", action: "index", :id => hokaido.id, school_id: hokaido.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 関東地方
-                ul
-                  - @kantos.each do |kanto|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="a#{kanto.id}"
-                        = link_to kanto.name, controller: "schools", action: "index", :id => kanto.id, school_id: kanto.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 中部地方
-                ul
-                  - @chubus.each do |chubu|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="a#{chubu.id}"
-                        = link_to chubu.name, controller: "schools", action: "index", :id => chubu.id, school_id: chubu.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 近畿地方
-                ul
-                  - @kinkis.each do |kinki|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="a#{kinki.id}"
-                        = link_to kinki.name, controller: "schools", action: "index", :id => kinki.id, school_id: kinki.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 九州／沖縄地方
-                ul
-                  - @okinawas.each do |okinawa|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="a#{okinawa.id}"
-                        = link_to okinawa.name, controller: "schools", action: "index", :id => okinawa.id, school_id: okinawa.id, remote: true
+        .panel__body-search
+            #jstree_categories
+              ul
+                li data-jstree=("{ \"opened\" : true }")
+                  b 北海道/東北地方
+                  ul
+                    - @hokaidos.each do |hokaido|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="a#{hokaido.id}"
+                          = link_to hokaido.name, controller: "schools", action: "index", :id => hokaido.id, school_id: hokaido.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 関東地方
+                  ul
+                    - @kantos.each do |kanto|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="a#{kanto.id}"
+                          = link_to kanto.name, controller: "schools", action: "index", :id => kanto.id, school_id: kanto.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 中部地方
+                  ul
+                    - @chubus.each do |chubu|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="a#{chubu.id}"
+                          = link_to chubu.name, controller: "schools", action: "index", :id => chubu.id, school_id: chubu.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 近畿地方
+                  ul
+                    - @kinkis.each do |kinki|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="a#{kinki.id}"
+                          = link_to kinki.name, controller: "schools", action: "index", :id => kinki.id, school_id: kinki.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 九州／沖縄地方
+                  ul
+                    - @okinawas.each do |okinawa|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="a#{okinawa.id}"
+                          = link_to okinawa.name, controller: "schools", action: "index", :id => okinawa.id, school_id: okinawa.id, remote: true
 
-          /! ここに表示
-          ul#result
-          .panel-heading
-            | 君のお気に入りプログラミング言語からさがそう！！
-          #jstree
-            ul
-              li data-jstree=("{ \"opened\" : false }")
-                b Java
-                ul
-                  - @java.each do |j|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="l#{j.id}"
-                        = link_to j.name, controller: "schools", action: "index", :id => j.id, school_id: j.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b Ruby
-                ul
-                  - @ruby.each do |r|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="l#{r.id}"
-                        = link_to r.name, controller: "schools", action: "index", :id => r.id, school_id: r.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b PHP
-                ul
-                  - @php.each do |p1|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="l#{p1.id}"
-                        = link_to p1.name, controller: "schools", action: "index", :id => p1.id, school_id: p1.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b .NET
-                ul
-                  - @net.each do |net|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="l#{net.id}"
-                        = link_to net.name, controller: "schools", action: "index", :id => net.id, school_id: net.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b python
-                ul
-                  - @python.each do |p2|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="l#{p2.id}"
-                        = link_to p2.name, controller: "schools", action: "index", :id => p2.id, school_id: p2.id, remote: true
+            /! ここに表示
+            ul#result
+            .panel-heading.panel__heading
+              | 君のお気に入りプログラミング言語からさがそう！！
+            #jstree
+              ul
+                li data-jstree=("{ \"opened\" : false }")
+                  b Java
+                  ul
+                    - @java.each do |j|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="l#{j.id}"
+                          = link_to j.name, controller: "schools", action: "index", :id => j.id, school_id: j.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b Ruby
+                  ul
+                    - @ruby.each do |r|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="l#{r.id}"
+                          = link_to r.name, controller: "schools", action: "index", :id => r.id, school_id: r.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b PHP
+                  ul
+                    - @php.each do |p1|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="l#{p1.id}"
+                          = link_to p1.name, controller: "schools", action: "index", :id => p1.id, school_id: p1.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b .NET
+                  ul
+                    - @net.each do |net|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="l#{net.id}"
+                          = link_to net.name, controller: "schools", action: "index", :id => net.id, school_id: net.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b python
+                  ul
+                    - @python.each do |p2|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="l#{p2.id}"
+                          = link_to p2.name, controller: "schools", action: "index", :id => p2.id, school_id: p2.id, remote: true
 
-          /! ここに表示
-          ul#result2
-          .panel-heading
-            | 君の目的でわかりやすくさがそう！！
-          #jstree2
-            ul
-              li data-jstree=("{ \"opened\" : false }")
-                b 趣味
-                ul
-                  - @hobby.each do |ho|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="p#{ho.id}"
-                        = link_to ho.name, controller: "schools", action: "index", :id => ho.id, school_id: ho.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 就職
-                ul
-                  - @employment.each do |em|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="p#{em.id}"
-                        = link_to em.name, controller: "schools", action: "index", :id => em.id, school_id: em.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 起業
-                ul
-                  - @business.each do |bu|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="p#{bu.id}"
-                        = link_to bu.name, controller: "schools", action: "index", :id => bu.id, school_id: bu.id, remote: true
-              li data-jstree=("{ \"opened\" : false }")
-                b 仲間づくり
-                ul
-                  - @friend.each do |fr|
-                    li data-jstree=("{ \"icon\" : \"jstree-file\" }")
-                      span id="p#{fr.id}"
-                        = link_to fr.name, controller: "schools", action: "index", :id => fr.id, school_id: fr.id, remote: true
+            /! ここに表示
+            ul#result2
+            .panel-heading.panel__heading
+              | 君の目的でわかりやすくさがそう！！
+            #jstree2
+              ul
+                li data-jstree=("{ \"opened\" : false }")
+                  b 趣味
+                  ul
+                    - @hobby.each do |ho|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="p#{ho.id}"
+                          = link_to ho.name, controller: "schools", action: "index", :id => ho.id, school_id: ho.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 就職
+                  ul
+                    - @employment.each do |em|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="p#{em.id}"
+                          = link_to em.name, controller: "schools", action: "index", :id => em.id, school_id: em.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 起業
+                  ul
+                    - @business.each do |bu|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="p#{bu.id}"
+                          = link_to bu.name, controller: "schools", action: "index", :id => bu.id, school_id: bu.id, remote: true
+                li data-jstree=("{ \"opened\" : false }")
+                  b 仲間づくり
+                  ul
+                    - @friend.each do |fr|
+                      li data-jstree=("{ \"icon\" : \"jstree-file\" }")
+                        span id="p#{fr.id}"
+                          = link_to fr.name, controller: "schools", action: "index", :id => fr.id, school_id: fr.id, remote: true
 
         /! ここに表示
         ul#result3

@@ -1,0 +1,38 @@
+@import "../setting/_color";
+
+
+.panel__heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  height: 50px;
+  color: #fff;
+  background-color: $COLOR__MAIN;
+  border-color: #ddd;
+  margin-bottom: 5px;
+  padding: 13px 20px;
+}
+
+.panel__body {
+  display: flex;
+  justify-content: left;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 5px;
+  height: 95px;
+}
+
+.panel__image {
+  justify-content: left;
+  width: 170px;
+}
+
+.panel__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel__ranking {
+  height: 50%;
+  width: 100%;
+}
+
