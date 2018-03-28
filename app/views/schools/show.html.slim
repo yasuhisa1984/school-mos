@@ -16,8 +16,8 @@
                 |ここに特色など書いて行くここに特色など書いて行く
                 |ここに特色など書いて行くここに特色など書いて行く
                 |ここに特色など書いて行くここに特色など書いて行く
-            .school__koushiki
-              = link_to image_tag("koushiki.png"), :href => @school.url
+          .school__koushiki
+            = link_to image_tag("koushiki.png"), :href => @school.url
       = render 'nav'
       .col-sm-12.col-md-9
         section
@@ -35,8 +35,8 @@
                   = @school.comments.count
                 .school__submit
                   = link_to :anchor => 'form' do
-                    button.btn.btn-primary.btn-lg type="button" コメントする
-        .comments__area
+                    button.btn.btn-primary.btn-xl type="button" コメントする
+        .comments__area#js-comments__area
           = render partial: 'comments/comment', locals: { comments: @comments }
         #form.panel.panel-default.comments__area_center
           = render partial: 'comments/form', locals: { comment: @comment }

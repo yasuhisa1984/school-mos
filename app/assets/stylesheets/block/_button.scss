@@ -1,3 +1,4 @@
+@import "../setting/media-query";
 
 .btn {
   display: inline-block;
@@ -52,4 +53,18 @@
 .btn.btn-danger {
   color: #ffffff;
   background-color: #c9302c;
+}
+
+.btn-xl {
+  width: 300px;
+}
+
+@media #{$small} { 
+.btn-xl {
+  width: 100px;
+}
+
+.school_name_font {
+  font-size: 12px;
+}
 }

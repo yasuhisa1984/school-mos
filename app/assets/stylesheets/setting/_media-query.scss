@@ -7,7 +7,7 @@ $xxlarge-range: (120.063em); /* 1921px */
 
 // Media Queries
 $screen: "only screen" !default;
-
+$small:  "only screen and (max-width:640px)";
 $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "#{$screen} and (orientation: portrait)" !default;
 
