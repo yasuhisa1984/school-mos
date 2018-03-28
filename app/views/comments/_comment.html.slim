@@ -8,21 +8,17 @@
         p= comment_date("#{(page_pa * page_num) + (count + 1)}" , comment.name, date_japan(comment.created_at))
       .comments__item
         = comment.content
-      .comments__plus_minus 
+      .comments__plus_minus.mt-xl
         .progress.comments__progress_center
-          .progress-bar.progress-bar-success[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{plus_vote(@vote, comment.id)
-  }%"]
-            |  (Good)
-          .progress-bar.progress-bar-warning[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{minus_vote(@vote, comment.id)
-  }%"]
-            |  (Bad)
+          .progress-bar.progress__bar_color.progress-bar-success[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{plus_vote(@vote, comment.id)}%"]
+            = "(Good)" + "#{plus_vote(@vote, comment.id)}"
+        .progress.comments__progress_center
+          .progress-bar.progress__bar_color.progress-bar-warning[role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{minus_vote(@vote, comment.id)}%"]
+            = "(Bad)" + "#{minus_vote(@vote, comment.id)}"
         .comments_vote_area
           = link_to votes_path(comment, params: {is_up: true, comment_id: comment.id, comment: comments}), method: :post, remote: true do
             i.fa.fa-smile-o.fa-3x
           = link_to votes_path(comment, params: {is_up: false, comment_id: comment.id}), method: :post, remote: true do
             i.fa.fa-frown-o.fa-3x
         hr
-.comment
-  .comment__data
-  .comment__data.comment_size_l.comment_color_red
 

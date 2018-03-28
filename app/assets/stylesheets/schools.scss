@@ -147,7 +147,7 @@ section {
 }
 
 .school_name_font {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: gray;
 }
@@ -258,12 +258,6 @@ h2:before{
 
 .main {
   background-color: #f7f5f5;
-}
-
-.school_name_font {
-    font-size: 15px;
-    font-weight: bold;
-    color: gray;
 }
 
 
@@ -388,3 +382,57 @@ footer .navbar-nav li a:hover {
 hr {
   border-top: 1px dotted #bbb;
 }
+
+.school_wrap img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.school__koushiki {
+    width: 100%;
+    text-align: center;
+
+}
+
+.school__koushiki img {
+  width: 580px;
+  height: 139px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+@media (max-width: 980px) {
+  .school_wrap img {
+    width: 700px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .school_wrap img {
+    width: 295px;
+    height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .school__koushiki img {
+  width: 320px;
+  height: 139px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.school_name_font {
+  font-size: 12px;
+}
+
+
+}
+

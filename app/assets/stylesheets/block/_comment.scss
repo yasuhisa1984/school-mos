@@ -1,0 +1,42 @@
+
+.comments__area {
+  width: 100%;
+  display: flex;
+}
+
+.comments__area_center {
+  padding: 15px;
+}
+
+
+.comments__item {
+ font-size: 20px;
+ color: skyblue;
+ font-weight: bold;
+}
+
+.comments__data {
+ color: gray;
+}
+
+
+.comments__plus_minus {
+ justify-content: right;
+
+}
+
+.comments_vote_area {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comments__progress_center {
+margin-top: 10px;
+margin-bottom: 10px;
+
+}
+
+.progress {
+ height: 20px;
+}
