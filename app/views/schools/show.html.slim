@@ -22,9 +22,9 @@
       .col-sm-12.col-md-9
         section
             .panel.panel-default
-              .panel-body.panel__body.school__panelbody_center
+              .panel-body.panel__body.panel__panelbody_center
                 .school__image
-                = image_tag(@school.school_image_url,:size => "50x50")
+                  = image_tag(@school.school_image_url,:size => "50x50")
                 .school__name
                   .school_name_font
                     = @school.name

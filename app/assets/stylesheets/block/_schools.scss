@@ -265,10 +265,6 @@ h2:before{
 
 }
 
-.school__panelbody_center {
- padding: 25px 15px;
-}
-
 .school__name {
 
 }
@@ -390,17 +386,22 @@ hr {
 }
 
 .school__koushiki {
-    width: 100%;
-    text-align: center;
-
-}
-
-.school__koushiki img {
-  width: 580px;
-  height: 139px;
+  width: 100%;
   text-align: center;
-  margin: 0px;
-  padding: 0px;
+
+  img {
+    width: 580px;
+    height: 139px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    }
+
+    a:hover img {
+      opacity: 0.7; /* 透過レベル */
+      filter: alpha(opacity=80);
+    }
+
 }
 
 
@@ -433,6 +434,11 @@ hr {
   font-size: 12px;
 }
 
+.school__name {
+    width: 350px;
+    height: 20px;
+    margin-left: 10px;
+}
 
 }
 

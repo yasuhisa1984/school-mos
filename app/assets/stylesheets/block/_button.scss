@@ -1,4 +1,4 @@
-@import "../setting/media-query";
+@import "../setting/all";
 
 .btn {
   display: inline-block;
@@ -56,15 +56,16 @@
 }
 
 .btn-xl {
-  width: 300px;
+  width: 200px;
 }
 
 @media #{$small} { 
 .btn-xl {
-  width: 100px;
+  width: 80px;
+  font-size: 10px;
 }
 
 .school_name_font {
-  font-size: 12px;
+  font-size: 8px;
 }
 }

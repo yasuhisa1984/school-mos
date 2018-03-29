@@ -1,5 +1,4 @@
-@import "../setting/_color";
-
+@import "../setting/all";
 
 .panel__heading {
   font-size: 1.8rem;
@@ -15,15 +14,26 @@
 .panel__body {
   display: flex;
   justify-content: left;
-  padding: 15px;
+  padding: 8px;
   background-color: white;
   margin-bottom: 5px;
   height: 75px;
+
+  img {
+    width: 150px;
+    height: 60px;
+  }
 }
 
 .panel__image {
   justify-content: left;
   width: 170px;
+  
+  a:hover img {
+    opacity: 0.7; /* 透過レベル */
+    filter: alpha(opacity=80);
+  }
+
 }
 
 .panel__wrap {
@@ -34,5 +44,16 @@
 .panel__ranking {
   height: 50%;
   width: 100%;
+}
+
+.panel__panelbody_center {
+    padding: 11px 11px;
+}
+
+@media #{$small} { 
+.panel__body img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
