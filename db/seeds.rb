@@ -46,7 +46,7 @@ end
 #テーブル コメント
 200.times {
   name = Faker::Name.name
-  content = ['フヒヒww わろた', 'これはステマだわww', 'テレクラキャノンボール', 'テックアカデミー入ろう','DIVE INTO CODEってどうよ?'].sample
+  content = ['「かしわ（かしは）」または「かへ」とも読み、ひのき・このてがしわ」', 'お試しも可能！北海道にある!', 'テレクラキャノンボール', 'テックアカデミー入ろう','リナックスアカデミーってどうよ?'].sample
   school_id = [*1..10].sample
 
   Comment.create!(
