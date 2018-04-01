@@ -1,14 +1,19 @@
 @import "../setting/all";
 
 .panel__heading {
-  font-size: 1.8rem;
-  font-weight: bold;
   height: 50px;
   color: #fff;
   background-color: $COLOR__MAIN;
   border-color: #ddd;
   margin-bottom: 5px;
   padding: 13px 20px;
+
+  &_font_size_sm {
+  font-weight: 600;
+  font-size: 1.8rem;
+
+
+  }
 }
 
 .panel__body {
@@ -55,5 +60,16 @@
     width: 60px;
     height: 60px;
   }
+
+.panel__heading {
+  &_font_size_sm {
+  font-weight: 400;
+  font-size: 1.2rem;
+   }
+ }
+
+ .panel__image {
+    width: 90px;
+}
 }
 

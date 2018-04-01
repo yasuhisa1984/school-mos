@@ -1,12 +1,16 @@
-- @title = 'ログイン'
-#login-form
-  h1= @title
+#login-form.login__form
   = form_for @form, url: :staff_session do |f|
-    div
-      = f.label :email, 'メールアドレス'
-      = f.text_field :email
-    div
-      = f.label :password, 'パスワード'
-      = f.password_field :password
-    div
-      = f.submit 'ログイン'
+    header.login__header
+      h1.login__title Login
+    main.login__main
+      .login__group
+        = f.text_field :email, :class => "login__input"
+        = f.label :email, 'メールアドレス', :class => "login__label"
+        .login__bar
+      .login__group
+        = f.password_field :password, :class => "login__input"
+        = f.label :password, 'パスワード', :class => "login__label"
+        .login__bar
+      .login__terms
+    .login__footer
+        = f.submit 'ログイン',:class => "login__button"

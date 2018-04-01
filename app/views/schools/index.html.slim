@@ -4,11 +4,11 @@
       .col-sm-12.col-md-8
         .main
             .panel.panel-default
-            .panel-heading.panel__heading
+            .panel-heading.panel__heading.panel__heading_font_size_sm
                 p
                   | スクール最新情報　今ここが熱いかも！！
         = render partial: 'school', collection: @schools, type: :details
-        .panel-heading.panel__heading.mt-lg
+        .panel-heading.panel__heading.panel__heading_font_size_sm.mt-lg
           | 君の住んでる地域のそばにも！？
         .panel__body-search
             #jstree_categories
@@ -51,7 +51,7 @@
 
             /! ここに表示
             ul#result
-            .panel-heading.panel__heading
+            .panel-heading.panel__heading.panel__heading_font_size_sm
               | 君のお気に入りプログラミング言語からさがそう！！
             #jstree
               ul
@@ -93,7 +93,7 @@
 
             /! ここに表示
             ul#result2
-            .panel-heading.panel__heading
+            .panel-heading.panel__heading.panel__heading_font_size_sm
               | 君の目的でわかりやすくさがそう！！
             #jstree2
               ul
