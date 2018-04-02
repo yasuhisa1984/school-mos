@@ -1,0 +1,10 @@
+# スタイルガイドのもとになるスタイルシートファイルがあるディレクトリ
+source: ./styleguide
+
+# スタイルガイドの書き出し先のディレクトリ
+destination: ./styleguide
+
+# スタイルガイドのテンプレートがあるディレクトリ
+documentation_assets: ../../../doc_assets
+
+
